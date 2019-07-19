@@ -1,0 +1,515 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Bootstrap -->
+  <link href="/WEB/Cyber/ComBoard_V005/bootstrap/css/bootstrap.css" rel="stylesheet" id="main-theme-script">
+  <link href="/WEB/Cyber/ComBoard_V005/css/themes/default.css" rel="stylesheet" id="theme-specific-script">
+  <link href="/WEB/Cyber/ComBoard_V005/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WKU BBS</title>
+<style>
+h3{
+background-color: #dff0d8;
+border-color: #c7e6ba;font-size: 18px;line-height: 27px;padding: 8px 35px 8px 14px;
+margin-bottom: 18px;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;}
+hr {
+  margin: 18px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+}
+body,td,th {
+  font-size: 12px;
+  font-family: 돋움;
+}
+
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+
+.btn_pack,
+.btn_pack *{display:inline-block;overflow:visible;position:relative;margin:0;padding:0;border:0;background:url(/WEB/Cyber/ComBoard_V005/img/btn_pack.gif) no-repeat;font-size:12px;font-family:Tahoma, Sans-serif;color:#333;text-decoration:none !important;vertical-align:top;white-space:nowrap}
+.btn_pack{margin-right:4px}
+.btn_pack *{left:4px;cursor:pointer;_cursor:hand}
+.btn_pack.medium,
+.btn_pack.medium *{height:24px;line-height:24px}
+.btn_pack.large,
+.btn_pack.large *{height:30px;line-height:30px}
+.btn_pack.xlarge,
+.btn_pack.xlarge *{height:36px;line-height:36px}
+.btn_pack.small,
+.btn_pack.small *{height:19px;line-height:19px}
+.btn_pack.medium{background-position:left 0}
+.btn_pack.large{background-position:left -30px}
+.btn_pack.xlarge{background-position:left -65px}
+.btn_pack.small{background-position:left -106px}
+.btn_pack.medium *{padding:0 10px 0 6px;background-position:right top;font-size:12px}
+.btn_pack.large *{padding:0 10px 0 6px;background-position:right -30px;font-size:16px}
+.btn_pack.xlarge *{padding:0 10px 0 6px;background-position:right -65px;font-size:20px}
+.btn_pack.small *{padding:0 6px 0 2px;background-position:right -106px;font-size:11px}
+.btn_pack *:hover,
+.btn_pack *:active,
+.btn_pack *:focus{color:#690}
+.btn_pack.strong *{font-weight:bold !important}
+.btn_pack.icon *{padding-left:20px}
+.btn_pack.small.icon *{padding-left:16px}
+.btn_pack.icon span{width:20px;margin-right:-20px;padding:0 !important}
+.btn_pack.medium .check{background-position:4px -150px}
+.btn_pack.large .check{background-position:4px -146px}
+.btn_pack.xlarge .check{background-position:5px -144px}
+.btn_pack.small .check{background-position:3px -153px}
+.btn_pack.medium .add{background-position:-16px -150px}
+.btn_pack.large .add{background-position:-14px -146px}
+.btn_pack.xlarge .add{background-position:-14px -144px}
+.btn_pack.small .add{background-position:-18px -153px}
+.btn_pack.medium .delete{background-position:-34px -150px}
+.btn_pack.large .delete{background-position:-34px -146px}
+.btn_pack.xlarge .delete{background-position:-34px -144px}
+.btn_pack.small .delete{background-position:-37px -153px}
+.btn_pack.medium .calendar{background-position:-56px -150px}
+.btn_pack.large .calendar{background-position:-56px -146px}
+.btn_pack.xlarge .calendar{background-position:-56px -144px}
+.btn_pack.small .calendar{background-position:-59px -153px}
+.btn_pack.medium .refresh{background-position:-76px -150px}
+.btn_pack.large .refresh{background-position:-76px -146px}
+.btn_pack.xlarge .refresh{background-position:-76px -144px}
+.btn_pack.small .refresh{background-position:-79px -153px}
+.btn_pack.medium .download{background-position:-96px -151px}
+.btn_pack.large .download{background-position:-96px -147px}
+.btn_pack.xlarge .download{background-position:-96px -145px}
+.btn_pack.small .download{background-position:-99px -154px}
+/* //UI Object */
+
+body {
+  padding: 10px;
+}
+
+@media print {
+
+.btn { display:none; }
+a:link{color:#000}
+button,
+input,
+select,
+textarea { display:none; }
+#noPrint { display:none; }
+#pContent { padding-left:0 }
+}
+
+.alert{border:0; color:#000}
+</style>
+
+
+<script type="text/javascript">
+function NopenWin(target,w_width,w_height)
+{
+  var xpos = ( screen.width -  w_width  ) / 2;
+  var ypos = ( screen.height - w_height )  / 2;
+  msgWindow=window.open(target,'COMBOARD_POPUP','toolbar=yes,status=no,top='+ ypos +',left='+ xpos +',width=' + w_width + ',height=' + w_height +',directories=no,scrollbars=yes,location=no,resizable=yes,border="0",menubar=no');
+  //msgWindow.focus();
+}
+</script>
+
+
+<style>
+body {
+  padding-top:0;
+}
+
+
+@media print {
+
+.btn { display:none; }
+a:link{color:#000}
+button,
+input,
+select,
+textarea { display:none; }
+#noPrint { display:none; }
+#pContent { padding-left:0 }
+}
+
+.alert{border:0; color:#000}
+
+
+.specialTable {}
+</style>
+
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<link href="http://image.wku.ac.kr/site/wku/etc/form2016.css" media="all" rel="stylesheet" type="text/css">
+<script language='JavaScript'>
+function printGo()
+{
+  var form = document.view;
+
+  window.open('/Cyber/ComBoard_V005/Content/print.jsp?gid=1115983888724&bid=1203406502138&cid=1520923997147','COMBOARD_PRINT','toolbar=yes,status=no,width=800,height=600,directories=no,scrollbars=yes,location=no,resizable=yes,border="0",menubar=yes');
+
+}
+function listGo()
+{
+  var form = document.view;
+
+  form.method = 'POST';
+  form.action = '/Cyber/ComBoard_V005/Content/list.jsp';
+  form.submit();
+}
+function allListGo()
+{
+  var form = document.view;
+
+  form.sField.value = '';
+  form.sKey.value = '';
+
+  form.method = 'POST';
+  form.action = '/Cyber/ComBoard_V005/Content/list.jsp';
+  form.submit();
+}
+function modifyGo()
+{
+  var form = document.view;
+
+
+   if (confirm('본문 만 수정하시겠습니까 ?'))
+     form.fchange.value = '0';
+   else if (confirm('본문 + 파일을 수정하시겠습니까 ?'))
+     form.fchange.value = '1';
+   else
+     return;
+
+
+  form.method = 'POST';
+  form.action = '/Cyber/ComBoard_V005/Content/modify.jsp';
+  form.submit();
+}
+function replyGo()
+{
+  var form = document.view;
+
+  form.method = 'POST';
+  form.action = '/Cyber/ComBoard_V005/Content/reply.jsp';
+  form.submit();
+}
+function writeGo()
+{
+  var form = document.view;
+
+  form.method = 'POST';
+  form.action = '/Cyber/ComBoard_V005/Content/write.jsp';
+  form.submit();
+}
+
+function stopGo()
+{
+  var form = document.stop;
+
+  if (!form.deletememo.value)
+  {
+    alert('삭제사유를 입력하세요');
+    form.deletememo.focus();
+    return;
+  }
+
+  if (confirm('이용 정지 하시겠습니까 ?'))
+  {
+    form.gubun.value = 'STOP';
+    form.method = 'POST';
+    form.action = '/Cyber/ComBoard_V005/Content/ract.jsp';
+    form.submit();
+  }
+}
+
+function newsGo()
+{
+  var form = document.news;
+
+  if (!form.from_time.value || !form.to_time.value)
+  {
+    alert('게시기간을 입력하세요');
+    form.from_time.focus();
+    return;
+  }
+
+  if (confirm(' [ NEWS ] 등록하시겠습니까 ?'))
+  {
+    form.gubun.value = 'NEWS';
+    form.method = 'POST';
+    form.action = '/Cyber/ComBoard_V005/Content/ract.jsp';
+    form.submit();
+  }
+}
+
+function deleteGo()
+{
+  var form = document.view;
+
+  if (confirm('삭제하시겠습니까 ?'))
+  {
+    form.gubun.value = 'DELETE';
+    form.method = 'POST';
+    form.action = '/Cyber/ComBoard_V005/Content/ract.jsp';
+    form.submit();
+  }
+}
+function voteGo()
+{
+  var form = document.view;
+
+  if (confirm('추천하시겠습니까 ?'))
+  {
+    form.gubun.value = 'VOTE';
+    form.method = 'POST';
+    form.action = '/Cyber/ComBoard_V005/Content/ract.jsp';
+    form.submit();
+  }
+}
+function downGo(fgubun)
+{
+  var form = document.view;
+
+  form.fgubun.value = fgubun;
+  form.isRealPath.value = 'T';
+  form.baseSavePath.value = '/wupis/cyber/ComBoard/upload/upload';
+  form.method = 'POST';
+  form.action = '/Cyber/ComBoardDownLoad';
+  form.submit();
+}
+
+function chkDate(y, m, d)
+{
+  var er = 0; //
+  var daa = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if (y%1000 != 0 && y%4 == 0) daa[1] = 29;
+  if (d > daa[m-1] || d < 1) er = 1;
+  if (m < 1 || m > 12) er = 1;
+  if (m%1 != 0 || y%1 != 0 || d%1 != 0) er = 1;
+
+  return er;
+}
+
+function checkDateFormat(edit)
+{
+  var tvalue = edit.value;
+
+  if (tvalue.length == 6)
+  {
+    var year  = tvalue.substring(0,4);
+    var month = tvalue.substring(4,6);
+
+    if (chkDate(year, month, 1) == 1)
+  {
+      alert('invalid date format (YYYYMM)');
+    edit.value = '';
+  }
+  }
+  else if (tvalue.length == 8)
+  {
+    var year  = tvalue.substring(0,4);
+    var month = tvalue.substring(4,6);
+    var day   = tvalue.substring(6,8);
+
+    if (chkDate(year, month, day) == 1)
+  {
+      alert('invalid date format (YYYYMMDD)');
+    edit.value = '';
+  }
+  }
+}
+
+function checkKeys()
+{
+  if ((event.keyCode < 48 || event.keyCode > 57) &&
+      event.keyCode != 13)
+  {
+    event.keyCode=0;
+    alert('required number string');
+  }
+}
+</script>
+<!--  ////////////////////////게시판 헤더/////////////////////////// -->
+<h3>원룸,자취,하숙</h3>
+
+
+<!--
+    ▶ 원룸,자취,하숙 등 주거정보에 대한 공간입니다. <br>▶ 원룸,자취,하숙 게시판은 내ㆍ외부 구성원들에게 활용되며, 게시물에 대한 책임은 게시자에게 있으니 ID 관리에 유의하여 주시기 바랍니다. <br>▶ 게시판 이용안내를 숙지하였으며, 게시물 삭제대상의 내용에 동의하겠습니다.
+-->
+
+
+<form name='view'>
+<input type='hidden' name='gubun'>
+<input type='hidden' name='lpage' value='1'>
+<input type="hidden" name='gid' value='1115983888724'>
+<input type="hidden" name='bid' value='1203406502138'>
+<input type="hidden" name='cid' value='1520923997147'>
+<input type='hidden' name='sField' value=''>
+<input type='hidden' name='sKey' value=''>
+<input type="hidden" name='fchange' value='0'>
+<input type="hidden" name='fgubun'>
+<input type="hidden" name='baseSavePath'>
+<input type="hidden" name='isRealPath'>
+</form>
+
+
+
+<div class="row-fluid" style="color:#999; font-size:11px">
+  <div class="span12">
+  <strong>글쓴이 :</strong> 김용대 (<a href='mailto:kydss@wku.ac.kr'>kydss</a>)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <strong>NO. :</strong> 1520923997147
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <strong>조회수 :</strong> 20
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <strong>등록일 :</strong> 2018년 03월 13일 15시 53분 17초 <!-- (ip : 123.108.17.2) --></div>
+</div>
+<hr />
+
+<div class="row-fluid" style="color:#999; font-size:11px">
+  <div class="span12">
+    <strong>첨부파일(1) :</strong> <a href='javaScript:downGo(1);'><strong>대은빌딩2.zip</strong></a>
+    <span id="noPrint">File size is <strong>70.77 KByte</strong>&nbsp;&nbsp;<strong>8</strong> Times have been downloaded</span>
+  </div>
+</div>
+<hr />
+
+
+
+<div class="row-fluid" style="color:#999; font-size:11px">
+  <div class="span12">
+    <strong>첨부파일(2) :</strong> <a href='javaScript:downGo(2);'><strong>대은빌딩1.zip</strong></a>
+    <span id="noPrint">File size is <strong>71.57 KByte</strong>&nbsp;&nbsp;<strong>11</strong> Times have been downloaded</span>
+  </div>
+</div>
+<hr />
+
+
+
+
+<div class="row-fluid">
+  <div class="span12"><p style="font-size:18px; font-weight:bold">☆좋은원룸이 있어 소개해 드리고자 합니다.. ☆</p></div>
+</div>
+<hr />
+<div class="row-fluid">
+  <div class="span12">
+
+
+  <div style="padding-left:5px">
+
+  <p><strong><span style="font-size:18px"><span style="color:rgb(0, 0, 205)">☆좋은원룸이 있어 소개해 드리고자 합니다.. ☆</span></span></strong></p>
+
+<p><br />
+<strong><span style="font-size:16px">위치는 원대정문 큰사거리 렌트카 있는쪽<span style="color:rgb(0, 0, 255)">(대은빌딩 5층건물)</span>이라 학교와도 가깝고</span></strong></p>
+
+<p><strong><span style="font-size:16px">대학로도 가까워 접근성이 용이합니다.. <span style="color:rgb(255, 0, 0)">정문에서 5분거리 후문에서 10분거리정도 </span>됩니다</span></strong></p>
+
+<p><strong><span style="font-size:16px">12평~15평 다양하게 있습니다&nbsp; 1년 및 6개월도 가능합니다</span></strong></p>
+
+<p><strong><span style="font-size:16px">욕실과 주방이 완비되어 있고 풀옵셥입니다</span></strong></p>
+
+<p><strong><span style="font-size:16px">1. <span style="color:rgb(0, 0, 255)">인터넷(무료) &amp;유선방송(무료)</span></span></strong></p>
+
+<p><strong><span style="font-size:16px">2. <span style="color:rgb(0, 0, 205)">에어콘, TV(32인치&nbsp;LED)&nbsp;,&nbsp; 침대, 책상, 옷장, 세탁기, 전자랜지 기타등등</span></span></strong></p>
+
+<p><strong><span style="font-size:16px">개개인의 전기계량기로 편리하고</span></strong></p>
+
+<p><strong><span style="font-size:16px">참 심야전기라 난방비 걱정도 뚝~~</span></strong></p>
+
+<p><strong><span style="font-size:16px">보시고 상담해보시고 가격조절도 가능합니다.</span></strong></p>
+
+<p><strong><span style="font-size:16px"><span style="color:rgb(255, 0, 0)">휴대폰</span> :&nbsp;&nbsp; 010 -3109 - 9100</span></strong></p>
+
+<p><strong><span style="font-size:16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 010 - 3160 - 9100</span></strong></p>
+
+  </div>
+
+
+
+  </div>
+</div>
+<hr />
+
+
+<div class="row-fluid">
+  <div class="span6">
+
+
+
+
+
+
+
+  </div>
+  <div class="span6" style="text-align:right">
+    <button class="btn" type="submit" onclick='JavaScript:printGo()'><i class="icon-print icon-black"></i> 인쇄</button>
+    <button class="btn" type="submit" onclick='JavaScript:listGo(1, 1)'><i class="icon-zoom-in icon-black"></i> 검색목록</button>
+    <button class="btn" type="submit" onclick="location.href='/Cyber/ComBoard_V005/Content/list.jsp?gid=1115983888724&bid=1203406502138'"><i class="icon-align-justify icon-black"></i> 전체목록</button>
+
+  </div>
+</div>
+<hr />
+
+
+
+
+<!--  //////////////////////////////////////////////////// -->
+
+
+    <table border='0' cellspacing='0' cellpadding='0' width='100%' align=left>
+
+<table><tr><td style="width:300px;"></td></tr></table>
+
+</form>
+</table>
+
+
+
+
+
+
+<!--  //////////////////////////////////////////////////// -->
+
+
+
+<!--  //////////////////////////////////////////////////// -->
+
+
+
+
+</body>
+</html>

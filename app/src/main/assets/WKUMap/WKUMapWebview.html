@@ -1,0 +1,1416 @@
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+
+    <meta name='keywords' content='' />
+    <meta name='keywords' content='' />
+
+    <link rel="icon" href="http://www.wku.ac.kr/wp-content/themes/wku/common/img/favicon.ico" type="image/x-icon">
+    <link href="http://www.wku.ac.kr/wp-content/themes/wku/common/img/apple-touch-icon-xlarge.png" rel="apple-touch-icon-precomposed" sizes="144x144" type="image/png"/>
+    <link href="http://www.wku.ac.kr/wp-content/themes/wku/common/img/apple-touch-icon-medium.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png"/>
+    <link href="http://www.wku.ac.kr/wp-content/themes/wku/common/img/apple-touch-icon-small.png" rel="apple-touch-icon-precomposed" sizes="57x57" type="image/png"/>
+    <link rel="stylesheet" type="text/css" media="all" href="http://www.wku.ac.kr/wp-content/themes/wku/style.css?ver=0811.1" />
+    <!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="http://www.wku.ac.kr/wp-content/themes/wku/common/css/ie.css" /><![endif]-->
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel='dns-prefetch' href='//maps.googleapis.com' />
+    <link rel='dns-prefetch' href='//s.w.org' />
+
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.wku.ac.kr\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56794,8205,9794,65039],[55358,56794,8203,9794,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+
+    <style type="text/css">
+      img.wp-smiley,
+      img.emoji {
+	       display: inline !important;
+	       border: none !important;
+	       box-shadow: none !important;
+	       height: 1em !important;
+	       width: 1em !important;
+	       margin: 0 .07em !important;
+	       vertical-align: -0.1em !important;
+	       background: none !important;
+	       padding: 0 !important;
+       }
+     </style>
+
+    <style>
+      .campusMap { width: 100%; height: 100%; }
+      .campusMap .mapArea { height: 65%; }
+      .campusMap .group { height: 10%; }
+      .campusMap .list { height: 25%; }
+
+      .campusMap .mapInfo { padding: 0 0; background-color: #3A475E; padding-bottom: 20px; }
+      .campusMap .mapInfo h3 { font-size: 13pt; font-style: bold; padding-left: 10px; color: #ffffff;}
+      .campusMap .mapInfo h4 { font-size: 12pt; font-style: bold; padding-left: 10px; color: #ffffff;}
+      .campusMap .mapInfo h5 { font-size: 8pt; font-style: italic; padding-right: 10px; color: #ffffff; text-align: right; }
+
+      .telInfo { float: right; width: 100%; height: 100%; padding-right: 10px; padding-bottom: 5px;}
+      .telIcon { float: right; width: 4%; height: auto; margin-left: 10px;  }
+      .telText { float: right; width: 8®0%; height: auto; }
+
+      .info { padding-top: 10px; background-color: #a4aabb; margin-left: 10px; margin-right: 10px; margin-top: 10px; }
+      .info ul li { font-size: 8pt; font-style: italic; }
+
+      #imgCampusMap { width: 100%; height: 100%; }
+    </style>
+
+     <script type='text/javascript' src='http://www.wku.ac.kr/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+     <script type='text/javascript' src='http://www.wku.ac.kr/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+
+     <link rel='https://api.w.org/' href='http://www.wku.ac.kr/wp-json/' />
+     <link rel="alternate" type="application/json+oembed" href="http://www.wku.ac.kr/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.wku.ac.kr%2Fabout%2Fcampus-info%2Fcampus-map.html" />
+     <link rel="alternate" type="text/xml+oembed" href="http://www.wku.ac.kr/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.wku.ac.kr%2Fabout%2Fcampus-info%2Fcampus-map.html&format=xml" />
+
+     <meta name="framework" content="Alkivia Framework 0.8" />
+
+     <script type='text/javascript' src='http://www.wku.ac.kr/wp-content/themes/wku/common/jwplayer/jwplayer.js'></script>
+
+     <title>캠퍼스맵 - 원광대학교 | 21세기 문화 인재를 키우는 아시아 중심대학</title>
+
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <script src="./jquery.ui.touch-punch.min.js"></script>
+
+     <script type="text/javascript">
+     $(function() {
+         $("#draggable").draggable();
+     });
+
+     // $( document ).ready(function() {
+     //   init();
+     // });
+
+     // function touchHandler(event) {
+     //   var touch = event.changedTouches[0];
+     //
+     //   var simulatedEvent = document.createEvent("MouseEvent");
+     //   simulatedEvent.initMouseEvent({
+     //     touchstart: "mousedown",
+     //     touchmove: "mousemove",
+     //     touchend: "mouseup"
+     //   }[event.type], true, true, window, 1,
+     //   touch.screenX, touch.screenY,
+     //   touch.clientX, touch.clientY, false,
+     //   false, false, false, 0, null);
+     //
+     //   touch.target.dispatchEvent(simulatedEvent);
+     //   event.preventDefault();
+     // }
+     //
+     // function init() {
+     //   document.addEventListener("touchstart", touchHandler, true);
+     //   document.addEventListener("touchmove", touchHandler, true);
+     //   document.addEventListener("touchend", touchHandler, true);
+     //   document.addEventListener("touchcancel", touchHandler, true);
+     // }
+     </script>
+
+     <script>
+     //IE8에서 header문제발생/2016.05.23
+        document.createElement('header');
+     </script>
+
+     <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-44607349-6', 'wku.ac.kr');
+        ga('send', 'pageview');
+      </script>
+    </head>
+
+    <body>
+      <div class="campusMap">
+        <div class="mapArea">
+          <div id="draggable" class="map">
+            <p><img id="imgCampusMap" img src="./resource/img_campus_map.gif" alt="원광대학교 캠퍼스맵" style="top: 0px; left: 0px; margin: 0px;"/></p>
+            <ul>
+              <li class="map1">1 정문</li>
+              <li class="map1-1">1-1 교시탑</li>
+              <li class="map3">3 남문</li>
+              <li class="map4">4 동문</li>
+              <li class="map5">5 대운동장</li>
+              <li class="map6">6 소운동장</li>
+              <li class="map7">7 자연식물원</li>
+              <li class="map10">10 미술관Ⅱ</li>
+              <li class="map11">11 서예관</li>
+              <li class="map12">12 대학본부</li>
+              <li class="map12-1">12-1 대학본부 창고</li>
+              <li class="map13">13 생활과학대학</li>
+              <li class="map14">14 학생지원관(교양교육대학)</li>
+              <li class="map14-1">14-1 중앙도서관</li>
+              <li class="map15">15 노천극장</li>
+              <li class="map16">16 60주년기념관(평생교육원)</li>
+              <li class="map17">17 숭산기념관(대학교당)</li>
+              <li class="map18">18 체육관</li>
+              <li class="map19">19 대학원관</li>
+              <li class="map20">20 교학대학</li>
+              <li class="map21">21 수덕호(봉황각)</li>
+              <li class="map22">22 공공정책대학</li>
+              <li class="map24">24 학생회관</li>
+              <li class="map25">25 원광디지털대학교</li>
+              <li class="map26">26 법학전문대학원</li>
+              <li class="map30">30 학생생활관-용화관</li>
+              <li class="map31">31 학생생활관-개벽관</li>
+              <li class="map32">32 학생생활관-학림관</li>
+              <li class="map33">33 학생생활관-삼동관</li>
+              <li class="map34">34 학생생활관-사은관</li>
+              <li class="map35">35 학생생활관-보은관</li>
+              <li class="map36">36 학생생활관-어학관</li>
+              <li class="map37">37 학생생활관-청운관</li>
+              <li class="map38">38 글로벌교류센터</li>
+              <li class="map51">51 사회과학대학</li>
+              <li class="map51-1">51-1 사회과학대학 신관</li>
+              <li class="map51-2">51-2 소방행정관</li>
+              <li class="map52">52 조형예술디자인대학(미술대학)</li>
+              <li class="map53">53 경영대학</li>
+              <li class="map53-1">53-1 경영대학 신관</li>
+              <li class="map55">55 학군단</li>
+              <li class="map56">56 인문대학</li>
+              <li class="map57">57 새천년관</li>
+              <li class="map58">58 물품보관창고</li>
+              <li class="map59">59 창의공과대학(공과대학)</li>
+              <li class="map59-1">59-1 공과대학 기계공작실</li>
+              <li class="map59-2">59-2 공과대학 U.T.M실</li>
+              <li class="map59-3">59-3 자동차실습관</li>
+              <li class="map60">60 박물관</li>
+              <li class="map61">61 도예관</li>
+              <li class="map62">62 조소관</li>
+              <li class="map62-1">62-1 조소관 별관</li>
+              <li class="map63">63 자연과학대학</li>
+              <li class="map64">64 승리관</li>
+              <li class="map65">65 문화체육관</li>
+              <li class="map65-1">65-1 문화체육관별관</li>
+              <li class="map66">66 농식품융합대학(생명자원과학대학)</li>
+              <li class="map67">67 무빙테크노관(창업보육센터)</li>
+              <li class="map68">68 약학대학</li>
+              <li class="map69">69 의과대학</li>
+              <li class="map69-1">69-1 제생의세관</li>
+              <li class="map70">70 한의학전문대학원</li>
+              <li class="map71">71 한의과대학</li>
+              <li class="map72">72 사범대학</li>
+              <li class="map72-1">72-1 사범대학부속유치원</li>
+              <li class="map73">73 교육관Ⅰ(간호대학)</li>
+              <li class="map74">74 치과대학</li>
+              <li class="map74-1">74-1 제2치학관</li>
+              <li class="map80">80 원광문화센터</li>
+              <li class="map81">81 한의과대학 익산한방방원</li>
+              <li class="map82">82 원광대학교병원</li>
+              <li class="map83">83 치과대학 치과병원</li>
+              <li class="map84">84 원광대학교병원 응급의료센터</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="group">
+          <ul>
+            <li><button type="button" data-sort="total">전체</button></li>
+            <li><button type="button" data-sort="headquarters">대학본부</button></li>
+            <li><button type="button" data-sort="etc">부속기관</button></li>
+            <li><button type="button" data-sort="college">단과대학</button></li>
+            <li><button type="button" data-sort="graduate">대학원</button></li>
+            <li><button type="button" data-sort="support">학생지원관</button></li>
+          </ul>
+        </div>
+
+        <div class="list">
+          <ul>
+            <li class="etc"><a href="#map16"><strong>16</strong>60주년기념관</a></li>
+            <li class="etc"><a href="#map63"><strong>63</strong>과학관</a></li>
+            <li class="headquarters"><a href="#map12"><strong>12</strong>관리처</a></li>
+            <li class="college"><a href="#map53"><strong>53</strong>경영대학</a></li>
+            <li class="college"><a href="#map53-1"><strong>53-1</strong>경영대학 신관</a></li>
+            <li class="graduate"><a href="#map57"><strong>57</strong>경영대학원</a></li>
+            <li class="college"><a href="#map22"><strong>22</strong>공공정책대학</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>공자학원</a></li>
+            <li class="headquarters"><a href="#map12"><strong>12</strong>교무처</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>교수학습세미나실</a></li>
+            <li><a href="#map1-1"><strong>1-1</strong>교시탑</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>교수학습개발센터</a></li>
+            <li><a href="#map73"><strong>73</strong>교육관Ⅰ</a></li>
+            <li class="graduate"><a href="#map72"><strong>72</strong>교육대학원</a></li>
+            <li class="college"><a href="#map20"><strong>20</strong>교학대학</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>국제교류과</a></li>
+            <li><a href="#map38"><strong>38</strong>글로벌교류센터</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>기록물관리과</a></li>
+            <li class="headquarters"><a href="#map12"><strong>12</strong>기획조정처</a></li>
+            <li><a href="#map3"><strong>3</strong>남문</a></li>
+            <li><a href="#map15"><strong>15</strong>노천극장</a></li>
+            <li class="headquarters"><a href="#map12"><strong>12</strong>대외협력홍보처</a></li>
+            <li><a href="#map5"><strong>5</strong>대운동장</a></li>
+            <li><a href="#map17"><strong>17</strong>대학교당</a></li>
+            <li class="headquarters"><a href="#map12"><strong>12</strong>대학본부</a></li>
+            <li><a href="#map12-1"><strong>12-1</strong>대학본부 창고</a></li>
+            <li class="graduate support"><a href="#map14"><strong>14</strong>대학원</a></li>
+            <li><a href="#map19"><strong>19</strong>대학원관</a></li>
+            <li class="etc"><a href="#map"><strong>교외</strong>도덕교육원</a></li>
+            <li class="college"><a href="#map66"><strong>66</strong>농식품융합대학(생명자원과학대학)</a></li>
+            <li><a href="#map61"><strong>61</strong>도예관</a></li>
+            <li><a href="#map4"><strong>4</strong>동문</a></li>
+            <li class="graduate"><a href="#map20"><strong>20</strong>동양학대학원</a></li>
+            <li><a href="#map67"><strong>67</strong>무빙테크노관</a></li>
+            <li><a href="#map65"><strong>65</strong>문화체육관</a></li>
+            <li><a href="#map65-1"><strong>65-1</strong>문화체육관 별관</a></li>
+            <li><a href="#map58"><strong>58</strong>물품보관창고</a></li>
+            <li><a href="#map10"><strong>10</strong>미술관Ⅱ</a></li>
+            <li class="etc"><a href="#map60"><strong>60</strong>박물관</a></li>
+            <li class="graduate"><a href="#map26"><strong>26</strong>법학전문대학원</a></li>
+            <li class="graduate"><a href="#map19"><strong>19</strong>보건·보완의학대학원</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>봉황인재학부 사무실</a></li>
+            <li class="headquarters"><a href="#map12"><strong>12</strong>비서실</a></li>
+            <li class="college"><a href="#map72"><strong>72</strong>사범대학</a></li>
+            <li><a href="#map72-1"><strong>72-1</strong>사범대학부속유치원</a></li>
+            <li class="college"><a href="#map51"><strong>51</strong>사회과학대학</a></li>
+            <li class="college"><a href="#map51-1"><strong>51-1</strong>사회과학대학 신관</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>사회봉사과</a></li>
+            <li class="headquarters"><a href="#map12"><strong>12</strong>산학협력단</a></li>
+            <li><a href="#map57"><strong>57</strong>새천년관</a></li>
+            <li class="college"><a href="#map13"><strong>13</strong>생활과학대학</a></li>
+            <li><a href="#map2"><strong>2</strong>서문</a></li>
+            <li><a href="#map11"><strong>11</strong>서예관</a></li>
+            <li><a href="#map51-2"><strong>51-2</strong>소방행정관</a></li>
+            <li><a href="#map6"><strong>6</strong>소운동장</a></li>
+            <li><a href="#map21"><strong>21</strong>수덕호(봉황각)</a></li>
+            <li><a href="#map17"><strong>17</strong>숭산기념관(대학교당)</a></li>
+            <li><a href="#map64"><strong>64</strong>승리관</a></li>
+            <li class="etc"><a href="#map24"><strong>24</strong>신문방송사</a></li>
+            <li class="graduate"><a href="#map66"><strong>66</strong>식품산업기술대학원</a></li>
+            <li class="college"><a href="#map68"><strong>68</strong>약학대학</a></li>
+            <li><a href="#map82"><strong>82</strong>원광대학교병원</a></li>
+            <li><a href="#map84"><strong>84</strong>원광대학교병원 응급의료센터</a></li>
+            <li><a href="#map25"><strong>25</strong>원광디지털대학교</a></li>
+            <li><a href="#map80"><strong>80</strong>원광문화센터</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>여대생커리어개발센터</a></li>
+            <li class="college"><a href="#map69"><strong>69</strong>의과대학</a></li>
+            <li class="college"><a href="#map56"><strong>56</strong>인문대학</a></li>
+            <li class="headquarters"><a href="#map14"><strong>14</strong>인력개발처</a></li>
+            <li class="headquarters"><a href="#map12"><strong>12</strong>입학관리처</a></li>
+            <li><a href="#map59-3"><strong>59-3</strong>자동차실습관</a></li>
+            <li class="etc college"><a href="#map63"><strong>63</strong>자연과학대학</a></li>
+            <li class="etc"><a href="#map7"><strong>7</strong>자연식물원</a></li>
+            <li><a href="#map1"><strong>1</strong>정문</a></li>
+            <li class="etc"><a href="#map59"><strong>59</strong>정보전산원</a></li>
+            <li class="etc"><a href="#map20"><strong>20</strong>정역원</a></li>
+            <li><a href="#map74-1"><strong>74-1</strong>제2치학관</a></li>
+            <li><a href="#map69-1"><strong>69-1</strong>제생의세관</a></li>
+            <li><a href="#map62"><strong>62</strong>조소관</a></li>
+            <li><a href="#map62-1"><strong>62-1</strong>조소관 별관</a></li>
+            <li class="college letter-spacing-2"><a href="#map52"><strong>52</strong>조형예술디자인대학(미술대학)</a></li>
+            <li class="etc"><a href="#map14-1"><strong>14-1</strong>중앙도서관</a></li>
+            <li class="college"><a href="#map59"><strong>59</strong>창의공과대학(공과대학)</a></li>
+            <li><a href="#map59-2"><strong>59-2</strong>창의공과대학 U.T.M실</a></li>
+            <li><a href="#map59-1"><strong>59-1</strong>창의공과대학 기계공작실</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>첨단스튜디오실</a></li>
+            <li><a href="#map18"><strong>18</strong>체육관</a></li>
+            <li class="etc"><a href="#map65"><strong>65</strong>체육실</a></li>
+            <li class="headquarters"><a href="#map12"><strong>12</strong>총무처</a></li>
+            <li class="college"><a href="#map74"><strong>74</strong>치과대학</a></li>
+            <li><a href="#map83"><strong>83</strong>치과대학 치과병원</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>취업지원과</a></li>
+            <li class="etc"><a href="#map16"><strong>16</strong>평생교육원</a></li>
+            <li><a href="#map55"><strong>55</strong>학군단</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>학사지원과</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>학생상담센터</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>학술정보과</a></li>
+            <li class="etc"><a href="#map31"><strong>31</strong>학생생활관-개벽관</a></li>
+            <li><a href="#map35"><strong>35</strong>학생생활관-보은관</a></li>
+            <li><a href="#map34"><strong>34</strong>학생생활관-사은관</a></li>
+            <li><a href="#map33"><strong>33</strong>학생생활관-삼동관</a></li>
+            <li><a href="#map36"><strong>36</strong>학생생활관-어학관</a></li>
+            <li><a href="#map30"><strong>30</strong>학생생활관-용화관</a></li>
+            <li><a href="#map37"><strong>37</strong>학생생활관-청운관</a></li>
+            <li><a href="#map32"><strong>32</strong>학생생활관-학림관</a></li>
+            <li><a href="#map14"><strong>14</strong>학생지원관</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>한중관계연구원</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>한중법률연구소</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>한중역사문화연구소</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>한중정치외교연구소</a></li>
+            <li class="support"><a href="#map14"><strong>14</strong>한중통상산업연구소</a></li>
+            <li class="headquarters college support"><a href="#map14"><strong>14</strong>교양교육대학</a></li>
+            <li class="headquarters etc"><a href="#map24"><strong>24</strong>학생회관</a></li>
+            <li class="headquarters"><a href="#map24"><strong>24</strong>학생복지처</a></li>
+            <li class="college"><a href="#map71"><strong>71</strong>한의과대학</a></li>
+            <li><a href="#map81"><strong>81</strong>한의과대학 익산한방병원</a></li>
+            <li class="graduate"><a href="#map70"><strong>70</strong>한의학전문대학원</a></li>
+            <li class="graduate"><a href="#map51"><strong>51</strong>행정대학원</a></li>
+          </ul>
+        </div>
+
+        <div id="map53" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_53.jpg" alt="" /></p>
+          <h3>경영대학</h3>
+          <div class="telInfo"><a href="tel:063-850-6233"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6233</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6275"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">경영교육원 : 063-850-6275</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6275"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">학습성과시스템 : 063-850-6275</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6270"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">경영학부 사무실 : 063-850-6270</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6276"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">경제학부 사무실 : 063-850-6276</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6234"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">국제통상학부 사무실 : 063-850-6234</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 경영경제연구소, 교수연구실</li><br>
+              <li>2층 : 교수연구실, 특수신분교수실, 국제공인IT자격시험센터</li><br>
+              <li>3층 : 대학원세미나실, 교수연구실</li><br>
+              <li>4층 : 영상학습실, 동아리방, 강의실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map53-1" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_53_1.jpg" alt="" /></p>
+          <h3>경영대학 신관</h3>
+          <div class="telInfo"><a href="tel:063-850-6233"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6233</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6275"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">경영교육원 : 063-850-6275</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6275"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">학습성과시스템 : 063-850-6275</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6270"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">경영학부 사무실 : 063-850-6270</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6276"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">경제학부 사무실 : 063-850-6276</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6234"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">국제통상학부 사무실 : 063-850-6234</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 동아리방, 강의실</li><br>
+              <li>2층 : 전산실</li><br>
+              <li>3층 : 봉황재고시실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map22" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_22.jpg" alt="" /></p>
+          <h3>공공정책대학</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 강의실, 학생회실</li><br>
+              <li>2층 : 열람실, 통합사무실, 교수연구실, 군사학연구소</li><br>
+              <li>3층 : 경찰학연구소, 외래교원실, 경찰고시반, 공무원반정독실, 강의실, 교수연구실, 경찰행정학부사무실</li><br>
+              <li>4층 : 컴퓨터실, 대학원세미나실, 강의실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map59" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_59.jpg" alt="" /></p>
+          <h3>창의공과대학</h3>
+          <div class="telInfo"><a href="tel:063-850-6703"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6703</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6075"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">공학교육원 : 063-850-6075</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6731"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">전기공학과 : 063-850-6731</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6738"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">전자공학과 :  063-850-6738</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6746"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">정보통신공학과 : 063-850-6746</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6343"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">전자융합공학과 : 063-850-6343</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6687"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">기계공학과 : 063-850-6687</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6687"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">기계설계공학과 : 063-850-6687</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6687"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">스마트자동차공학과 : 063-850-6687</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6715"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">토목환경공학과 : 063-850-6715</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6704"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">건축공학과 : 063-850-6704</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6725"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">도시공학부 : 063-850-6725</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6788"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">컴퓨터소프트웨어공학과 : 063-850-6788</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-7268"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">디지털콘텐츠공학과 : 063-850-7268</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6700"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">건축학과 : 063-850-6700</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-7276"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">화학융합공학과 : 063-850-7276</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-7272"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">탄소융합공학과 : 063-850-7272</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5644"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">정보전산원 : 063-850-5644~6</h5></a></div>
+
+          <div class="info">
+            <ul>
+              <li>1층 : 구조공학연구실, 실험실, 도로교통시스템실험실, 멀티미디어세미나실, 측량실습실, 도로교통시스템연구실, 학생회실, 휴게실, 교수연구실, 해안공학실험실, 강의실, 수리실험실, 지반공학연구실, 토목환경공학사무실, 환경공학연구실, 구조및재료실험실, 일반물리실험실</li><br>
+              <li>2층 : 취업상담실, 교학과, 전기/정보통신/전자/제어계측/컴퓨터학사무실, 공학교육원, 자동제어연구실, 교수연구실, 에너지 및 전력시스템실험실, 세미나실, 자동제어실험실, 전기기계실험실, 전기공학사무실, 강의실, 신호처리연구실, 컴퓨터응용연구실, 생체신호계측실, 독서실, 신생에너지실습실, 열공학실험실, 유체공학실험실, 내연기관실험실, 제어자동화연구실, 설계제도실, 공동전산실, 시스템실, 회의실, 정보전산원</li><br>
+              <li>3층 : 강의실, 전기응용신기술센터, 의공학연구실, 세미나실, 직접회로실, 교수연구실, 초고주파및광통신연구실, 디지털통신연구실, 회로및시스템연구실, 응용전자및생체공학연구실, 공동실험실, 제어공학실험실, 기계역학실험실, 기계종합설계실, 학회실, 기계자동차공학사무실, 고체역학연구실, 음향공학연구실,</li><br>
+              <li>4층 : 나노광반도체및소자실험실, 교수연구실, 무선통신연구실, 반도체공정연구실, 광전자응용연구실, 무선통신실험실, 도시및지역개발연구소, CAD/CAM연구실, 교통공학연구실, 도시계획실험실, 세미나실, 학생회실, 환경및위생공학실험실, 공동기기실, 강의실, 제어계측종합설계실, 컴퓨터그래픽스영상처리실험실, 지능정보제어시스템연구실, 로봇응용실험실</li><br>
+              <li>5층 : 설계실, 세미나실, 건축환경공학실험실, 교수연구실, 공동동아리방, 모형제작실, 컴퓨터그래픽 및 영상처리연구소, 헬스케어기술개발실, 강의실, 휴먼인터페이스연구실</li><br>
+            </ul>
+          <!-- <a href="tel:010-1231-1231">010-1231-1231</a> -->
+          </div>
+        </div>
+
+        <div id="map59-1" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_59_1.jpg" alt="창의공과대학 기계공작실" /></p>
+          <h3>창의공과대학 기계공작실</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 기계공작실, 재료실험실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map59-2" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_59_2.jpg" alt="창의공과대학 U.T.M실" /></p>
+          <h3>창의공과대학 U.T.M실</h3>
+        </div>
+
+        <div id="map1-1" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_1_1.jpg" alt="교시탑" /></p>
+          <h3>교시탑</h3>
+          <div class="info">
+            <ul>
+              <li>총학생회의 발의로 1973년 3월6일 캠퍼스의 중심지에 기공되었다. 배형식교수에 의해 설계된 높이 15미터, 직경5.6미터로 6개의 기둥을 세우고 3개의 인물을 3미터 높이로 조각하였다. 전면에 원광을 상징하는 여신상을,좌우에는 교시인 지덕겸수 도의실천을 의미하는 남성상을 조각하였다. 1973년 9월에 준공되었다.</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map73" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_73.jpg" alt="교육관1" /></p>
+          <h3>교육관Ⅰ(간호대학)</h3>
+          <div class="telInfo"><a href="tel:063-850-6033"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">평생교육원 어학교육부 : 063-850-6033</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>지하 : 실습실, 사범대고시원</li><br>
+              <li>1층 : 간호학과사무실, 도예실, 다실, 실습실</li><br>
+              <li>2층 : 실습실, 휴게실, 강의실, 세미나실</li><br>
+              <li>3층 : 어학원사무실, ESL상담실, 한국어과정교수실, 어학실습실, 강의실, 간호학과 교수연구실</li><br>
+              <li>4층 : 휴게실, 실습실, 강의실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map20" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_20.jpg" alt="교학대학" /></p>
+          <h3>교학대학</h3>
+          <div class="telInfo"><a href="tel:063-850-6113"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6113</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6115"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">원불교학과 : 063-850-6115</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5565"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">정역원 : 063-850-5565</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 컨텐츠개발실, 전산실, 한국문화학과, 교학대학, 교학과, 동양학대학원교학과, 세미나실, 학생회실</li><br>
+              <li>2층 : 원불교사상연구원, 원불교학과, 종교문제연구소, 정역원, 강의실, 세미나실, 명예교수실, 원불교대사전편찬실, 교수연구실</li><br>
+              <li>3층 : 열람실,강의실, 선과인격수련원</li><br>
+              <li>4층 : 시청각실, 기도실, 특수신분교수실, 교수연구실</li><br>
+              <li>5층 : 기공·요가·다도실, 세미나실, 한국문화실습실, 회화문화재세미나실, 교수연구실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map3" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_3.jpg" alt="남문" /></p>
+          <h3>남문</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map15" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_15.jpg" alt="노천극장" /></p>
+          <h3>노천극장</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map5" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_5.jpg" alt="대운동장" /></p>
+          <h3>대운동장</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map12" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_12.jpg" alt="대학본부" /></p>
+          <h3>대학본부</h3>
+          <div class="telInfo"><a href="tel:063-850-5336"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">재무과 : 063-850-5336</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5542"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">안전관리과 : 063-850-5542</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5330"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">시설지원과 : 063-850-5330</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5500"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">소통실 : 063-850-5500</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5112"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">의전과 : 063-850-5112</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5763"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">발전전략과 : 063-850-5763</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5132"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">기획평가과 : 063-850-5132</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5134"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">예산과 : 063-850-5134</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5414"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교원인사과 : 063-850-5414</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5263"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">입학관리과 : 063-850-5263~4</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5266"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">입학사정관실 : 063-850-5266</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5313"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">총무과(문서취급소) : 063-850-5313</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5326"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">자산관리과 : 063-850-5326</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5130"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">대외협력홍보처 : 063-850-5130</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5952"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">산학기획과 : 063-850-5952</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5158"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">산학진흥과 : 063-850-5158</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5153"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">연구지원과 : 063-850-5153</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5578"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">대학기술이전센터 : 063-850-5578</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5970"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">프라임사업기획과 : 063-850-5970~1</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5972"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">프라임사업지원과 : 063-850-5972~3</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5934"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">ICT융합교육원 : 063-850-5934</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5933"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">브릿지센터 : 063-850-5933</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 총무과, 인사관리과, 자산관리과, 문서취급소, 입찰실, 제3회의실, 입학관리과, 입학사정관실</li><br>
+              <li>2층 : 안전관리과, 재무과, 시설지원과, 총장실, 교학부총장실, 소통실, 의전과, 접견실</li><br>
+              <li>3층 : 발전전략과, 예산과, 교원인사과, 기획평가과, 이사장실, 법인사무처, 법인사업본부, 기획ㆍ감사팀, 병원경영지원처 경영지원팀</li><br>
+              <li>4층 : 연구지원과, 제1회의실, 제2회의실, 산학기획과, 대학기술이전센터, 산학진흥과, 홍보과, 총동문회</li><br>
+              <li>5층 : 노동조합</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map12-1" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_12_1.jpg" alt="대학본부 창고" /></p>
+          <h3>대학본부 창고</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map19" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_19.jpg" alt="대학원관" /></p>
+          <h3>대학원관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 실기실</li><br>
+              <li>2층 : 외래교원실, 원우회실</li><br>
+              <li>3층 : 세미나실, 보건학과</li><br>
+              <li>4층 : 보건·보완의학대학원, 예술치료자료실, 세미나실</li><br>
+              <li>5층 : 특수아동치료실, 음악치료실, 미술치료실, 무용연극치료실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map61" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_61.jpg" alt="도예관" /></p>
+          <h3>도예관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 일반성형실, 물래성형실</li><br>
+              <li>2층 : 디자인학부(도예전공)+C69, 일반성형실</li><br>
+              <li>3층 : 일반성형실, 유약보관실, 대학원실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map4" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_4.jpg" alt="동문" /></p>
+          <h3>동문</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map67" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_67.jpg" alt="무빙테크노관(창업보육센터)" /></p>
+          <h3>무빙테크노관(창업보육센터)</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 공공기기실</li><br>
+              <li>2층 : 입주기업사무실</li><br>
+              <li>3층 : 입주기업사무실, 행정실, 소회의실, 센터장실</li><br>
+              <li>4층 : 입주업체사무실, 세미나실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map65" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_65.jpg" alt="문화체육관" /></p>
+          <h3>문화체육관</h3>
+          <div class="telInfo"><a href="tel:063-850-5253"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">운영관리과 : 063-850-5253</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 체육실장실, 사무실, 감독실, 수업용트레이닝장, 웨이트트레이닝장, 경기장</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map65-1" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_65_1.jpg" alt="문화체육관 별관" /></p>
+          <h3>문화체육관별관</h3>
+          <div class="telInfo"><a href="tel:063-850-5253"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">운영관리과 : 063-850-5253</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 레슬링장, 격투기장, 스포츠과학부, 독서실, 전공실습실</li><br>
+              <li>2층 : 측정평가실험실, 체육과학연구소, 체육청소년연구소, 시청각실, 강의실, 교수연구실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map58" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_58.jpg" alt="물품보관창고" /></p>
+          <h3>물품보관창고</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map10" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_10.jpg" alt="미술관2" /></p>
+          <h3>미술관Ⅱ</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 보석가공실, 세공실,금공실, 귀금속보석공예전공사무실</li><br>
+              <li>2층 : 귀금속공예전공사무실, 세공실, 다이아몬드가공실, 주조실, R/P원본성형실, 교수연구실</li><br>
+              <li>3층 : Nuri주얼리마스터사업단, 대학원세미나실, 장신구디자인실, 보석감별실, 세공실, 작업실, 교수연구실</li><br>
+              <li>4층 : 사회봉사센터, 멀티미디어실, 수장고, 주얼리CAD실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map52" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_52.jpg" alt="조형예술디자인대학(미술대학)" /></p>
+          <h3>조형예술디자인대학(미술대학)</h3>
+          <div class="telInfo"><a href="tel:063-850-6359"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6359</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6591"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">미술과 : 063-850-6591</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6351"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">귀금속보석공예과 : 063-850-6351</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6332"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">디자인학부 : 063-850-6332</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6332"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">시각정보디자인 : 063-850-6332</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5290"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">공간환경산업디자인 : 063-850-5290</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6644"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">패션디자인산업학과 : 063-850-6644</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 시청각실, 산업디자인전공실기실, 산업디자인컴퓨터실, 모형제작실, 스프레이실, 공동작업실</li><br>
+              <li>2층 : 시각정보디자인전공실기실, 컴퓨터그래픽실, 영상편집실, 염색실, 대학원실, 직조실, 촬영실, 암실, 학생회실</li><br>
+              <li>3층 : 순수미술학부(한국화, 서양화, 시각정보디자인, 산업디자인전공)사무실, 교학6과, 공동전산실, 공간미디어스튜디오실, 산업디자인공동전산실, 서양화전공실기실, 직조실, 교수연구실</li><br>
+              <li>4층 : 서양화기초회화실, 서양화전공실기실, 판화실, 석판화실, 잉크실</li><br>
+              <li>5층 : 실습실, 소묘실, 전공실기실, 한국화대학원실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map60" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_60.jpg" alt="박물관" /></p>
+          <h3>박물관</h3>
+          <div class="telInfo"><a href="tel:063-850-5483"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">학예연구과 : 063-850-5483</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 학예연구과, 세미나실, 수장고, 발굴유물보관실</li><br>
+              <li>2층 : 전시실, 수장고</li><br>
+              <li>3층 : 전시실, 수장고</li><br>
+              <li>4층 : 전시실, 암실, 수장고</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map26" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_26.jpg" alt="법학전문대학원" /></p>
+          <h3>법학전문대학원</h3>
+          <div class="telInfo"><a href="tel:063-850-5303"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">법학전문도서관 : 063-850-5303</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 교학과, 원장실, 법학전문도서관, 외래교수실</li><br>
+              <li>2층 : 법학연구소, 의생명과학법센터, 열람실, 모의법정, 법률상담실</li><br>
+              <li>3층 : 강의실, 교수연구실, 학생회실, 학생지도센터, 상담실</li><br>
+              <li>4층 : 강의실, 교수연구실, 중형강의실</li><br>
+              <li>5층 : 강의실, 교수연구실, 컨퍼런스룸, 세미나실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map72" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_72.jpg" alt="사범대학" /></p>
+          <h3>사범대학</h3>
+          <div class="telInfo"><a href="tel:063-850-6503"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6503</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6502"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">사범대학부설교육연수원 : 063-850-6502~3</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6504"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">국어교육과 : 063-850-6504</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6511"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">영어교육과 : 063-850-6511</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6520"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">일어교육과 : 063-850-6520</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6525"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">한문교육과 : 063-850-6525</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6541"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">역사교육과 : 063-850-6541</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6860"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교육학과 : 063-850-6860</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6427"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">유아교육과 : 063-850-6427</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6585"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">가정교육과 : 063-850-6585</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6617"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">체육교육과 : 063-850-6617</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6570"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">수학교육과 : 063-850-6570</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6065"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">중등특수교육과 : 063-850-6065</h5></a></div>
+
+          <div class="info">
+            <ul>
+              <li>지하 : 강의실, 시청각실 ,휴게실</li><br>
+              <li>1층 : 교육공학/매체실습실, 한문교육과, 교학5과, 교육대학원, 중등특수교육과, 컴퓨터실, 강의실, 교수연구실, 학회실</li><br>
+              <li>2층 : 영상학습실, 독서실, 역사교육과, 국어교육과, 교수연구실, 강의실, 학회실</li><br>
+              <li>3층 : 임용고시실, 일어교육과, 영어교육과, 학회실, 교수연구실</li><br>
+              <li>4층 : 가정교육과, 교육학과, 전공실습실, 학회실, 강의실, 교수연구실</li><br>
+              <li>5층 : 유아교육과, 수학교육과, 음율활동지도실, 학습활동지도실 및 시청각실습실, 전산실, 강의실, 교수연구실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map72-1" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_72_1.jpg" alt="사범대학부속유치원" /></p>
+          <h3>사범대학부속유치원</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map51" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_51.jpg" alt="사회과학대학" /></p>
+          <h3>사회과학대학</h3>
+          <div class="telInfo"><a href="tel:063-850-6403"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6403</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6538"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">행정언론학부 : 063-850-6538</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6404"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">행정학전공 : 063-850-6404</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6416"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">신문방송학전공 : 063-850-6416</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6539"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">복지보건학부 : 063-850-6539</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6127"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">사회복지학전공 : 063-850-6127</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6568"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">보건행정학전공 : 063-850-6568</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6651"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">가정아동복지학과 : 063-850-6651</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6061"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">군사학과 : 063-850-6061</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5698"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">경찰행정학과 : 063-850-5698</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6907"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">소방행정학과 : 063-850-6907</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>지하 : 동아리방, 강의실</li><br>
+              <li>1층 : 독서실, 특수신분실, 멀티미디어실, 통합사무실(교학2과,행정대학원), 강의실</li><br>
+              <li>2층 : 고시실, 시청각실, 공동전산실, 학생회실, 전산실</li><br>
+              <li>3층 : 시청각실, 세미나실, 강의실</li><br>
+              <li>4층 : 강의실</li><br>
+              <li>5층 : 세미나실, 강의실, 동아리방, 학생회실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map51-1" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_51_1.jpg" alt="사회과학대학 신관" /></p>
+          <h3>사회과학대학 신관</h3>
+          <div class="telInfo"><a href="tel:063-850-6403"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6403</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6538"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">행정언론학부 : 063-850-6538</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6404"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">행정학전공 : 063-850-6404</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6416"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">신문방송학전공 : 063-850-6416</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6539"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">복지보건학부 : 063-850-6539</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6127"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">사회복지학전공 : 063-850-6127</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6568"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">보건행정학전공 : 063-850-6568</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6651"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">가정아동복지학과 : 063-850-6651</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6061"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">군사학과 : 063-850-6061</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5698"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">경찰행정학과 : 063-850-5698</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6907"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">소방행정학과 : 063-850-6907</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 컴퓨터실, 지역발전연구소, 교사편찬위원회, 교수연구실, 강의실</li><br>
+              <li>2층 : 강의실, 교수연구실</li><br>
+              <li>3층 : 대학원세미나실, 교수연구실, 강의실</li><br>
+              <li>4층 : 대학원세미나실, 사회복지전공실습실, 교수연구실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map57" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_57.jpg" alt="새천년관" /></p>
+          <h3>새천년관</h3>
+          <div class="telInfo"><a href="tel:063-850-6233"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6233</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6275"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">경영교육원 : 063-850-6275</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6275"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">학습성과시스템 : 063-850-6275</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6270"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">경영학부 사무실 : 063-850-6270</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6276"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">경제학부 사무실 : 063-850-6276</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6234"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">국제통상학부 사무실 : 063-850-6234</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 진로 및 취업상담실, 경영대학원</li><br>
+              <li>2층 : 경영대 제2전산실, 정보통신부 자원네트워크실습실, 컴퓨터실, 정보전자상거래실습실, 경제학부, 국제통상학부, 정보전자상거래학부, 경영학부, 학장실, 교학2과</li><br>
+              <li>3층 : 학생회실, 여학생수면실</li><br>
+              <li>4층 : 컴퓨터강의실, Lab</li><br>
+              <li>5층 : 기초학습튜터실, Lab실, 음영상도서실, 시청각실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map66" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_66.jpg" alt="농식품융합대학(생명자원과학대학)" /></p>
+          <h3>농식품융합대학(생명자원과학대학)</h3>
+          <div class="telInfo"><a href="tel:063-850-6663"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6663</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5603"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">원예산업학부 : 063-850-5603</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6655"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">식품영양학과 : 063-850-6655</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6824"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">산림조경학과 : 063-850-6824</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6667"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">식품생명공학과 : 063-850-6667</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6624"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">생물환경화학과 : 063-850-6674</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5043"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">자연식물원 운영관리과 : 063-850-5043</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 고시실, 실험실, 무균실, 시료조제실, 세미나실, 강의실, 교수연구실, 학생회실</li><br>
+              <li>2층 : 생명자원과학연구소, 공동전산실, 실험실, 통합사무실, 세미나실, 교학4과, 교수연구실, 강의실, 학회실</li><br>
+              <li>3층 : 무균실, 항온실, 실험실, 공동기기실, 시료조제실, 강의실, 교수연구실</li><br>
+              <li>4층 : 실험실, 세미나실, 강의실, 교수연구실, 원광한지산업기술연구소</li><br>
+              <li>5층 : 멀티미디어실, 도서실, 강의실, 실험실, 자연식물원사무실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map13" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_13.jpg" alt="생활과학대학" /></p>
+          <h3>생활과학대학</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 멀티미디어실, 헤어디자인실습실, 피부관리실, 실습실, 뷰티디자인학부기자재실, 강의실, 교수연구실</li><br>
+              <li>2층 : 마사지테라실습실, 세미나실, 교학1과, 뷰티디자인학부, 가정기구실습실, 의복재료실습실, 독서실</li><br>
+              <li>3층 : 공동기기실, 시약실, 실험실, 식품영양학전공사무실, 영양교육상담실, 실습실</li><br>
+              <li>4층 : 가정아동복지학전공사무실, 건강가정지원센터/결혼이민자가족센터, 아동연구실, 가족상담실, 보육실습실, 시청각실, 컴퓨터실, 강의실, 교수연구실</li><br>
+              <li>5층 : 패션디자인전공사무실, 실험실, 복식디자인실, 텍스타일디자인실, CAD실험실, 강의실, 교수연구실, 마사지테라피연구실, 인체계측실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map2" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_2.jpg" alt="서문" /></p>
+          <h3>서문</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map11" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_11.jpg" alt="서예관" /></p>
+          <h3>서예관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 마한백제문화연구소, 수장고, 유물정리실, 문자디자인실, 옵셋실, 문서취급소, 주차관리실</li><br>
+              <li>2층 : 실기실, 서예·문자예술학전공사무실, 교수연구실, 자료실</li><br>
+              <li>3층 : 실기실, 대학원실, 선방, 강의실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map51-2" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_51_2.jpg" alt="소방행정관" /></p>
+          <h3>소방행정관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 소방시설실습실, 구조구급실습실, 세미나실, 학생회실</li><br>
+              <li>2층 : 교수연구실, 학부사무실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map6" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_6.jpg" alt="소운동장" /></p>
+          <h3>소운동장</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map21" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_21.jpg" alt="수덕호(봉황각)" /></p>
+          <h3>수덕호(봉황각)</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map17" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_17.jpg" alt="숭산기념관(대학교당)" /></p>
+          <h3>숭산기념관(대학교당)</h3>
+          <div class="telInfo"><a href="tel:063-850-5584"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">대학교당 : 063-850-5584</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5558"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교수협의회 : 063-850-5558</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 교직원식당,전시실, 은혜의책보내기운동사무실, 유품전시장</li><br>
+              <li>2층 : 세미나실, 회의실, 대학선방, 교감실, 법당사무실, 교수협의회, 귀빈실</li><br>
+              <li>3층 : 대법당(대회의실), 방송실, 원학연사무실, 소법당</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map64" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_64.jpg" alt="승리관" /></p>
+          <h3>승리관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 야구연습장, 유도장</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map38" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_38.jpg" alt="글로벌교류센터" /></p>
+          <h3>글로벌교류센터</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map68" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_68.jpg" alt="약학대학" /></p>
+          <h3>약학대학</h3>
+          <div class="telInfo"><a href="tel:063-850-6813"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6813</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6871"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">약학과 : 063-850-6871</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5605"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">한약학과 : 063-850-5605</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 대학원세미나실, 정독실, 공동전산실, 공동기기실, 실습약국실, 학장실, 교학7과</li><br>
+              <li>2층 : 실험실, 천연물화학준비실, 약제학연구실</li><br>
+              <li>3층 : 공동기기실, 동물실험실</li><br>
+              <li>4층 : 약품분석준비실, 대사분석연구실, 약물학실험실, 본초학연구실, 동물사육실</li><br>
+              <li>5층 : 세미나실, 방제학연구실, 한약약리학연구실, 한약약제학연구실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map25" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_25.jpg" alt="원광디지털대학교" /></p>
+          <h3>원광디지털대학교</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map80" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_80.jpg" alt="원광문화센터" /></p>
+          <h3>원광문화센터</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map16" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_16.jpg" alt="60주년기념관(평생교육원)" /></p>
+          <h3>60주년기념관(평생교육원)</h3>
+          <div class="telInfo"><a href="tel:063-850-5793"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">한국어교육원 : 063-850-5793~4(82-63-850-5793~4)</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5513"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">평생교육원 : 063-850-5513</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6601"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">음악과 : 063-850-6601</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5726"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">행사지원과 : 063-850-5726</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 다목적홀, 관현악실, 창작실기실, 무용연습실, 예술학부(국악, 음악, 무용)사무실</li><br>
+              <li>2층 : 다목적홀, 전공실, 무용연습실, 관악합주실, 연구실</li><br>
+              <li>3층 : 대형연습실, 개인연습실, 앙상블실, 연구실</li><br>
+              <li>4층 : 개인연습실, 대형연습실, 관현악실, 대학원세미나실</li><br>
+              <li>5층 : 평생교육원 운영관리과, 강의실 및 실습실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map84" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_84.jpg" alt="원광대학교병원 응급의료센터" /></p>
+          <h3>원광대학교병원 응급의료센터</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map69" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_69.jpg" alt="의과대학" /></p>
+          <h3>의과대학</h3>
+          <div class="telInfo"><a href="tel:063-850-6753"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6753</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6753"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">의예과 : 063-850-6753</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6753"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">의학과 : 063-850-6753</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6070"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">간호학과 : 063-850-6070</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6954"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">작업치료학과 :  063-850-6954</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5470"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">의학도서운영과 : 063-850-5470</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>지하 : 강의실, 세미나실, 동아리방</li><br>
+              <li>1층 : 학장실, 교학8과, 의학도서실, 대학원세미나실, 공동전산실, 강의실, 학생회실, 휴게실</li><br>
+              <li>2층 : 조직배양실, 실험실, 세포배양실, 암실, 환경과학연구소, 교수연구실, 강의실, 고시실, 도서실, 전자현미경실, 해부학실</li><br>
+              <li>3층 : 분자병리실, 세미나실, 실험실, 교수연구실, 병리학교실, 전정와우센터, 진료능력개발센터</li><br>
+              <li>4층 : 공동기기실, 면역질환유전체연구센터, 실습실, 교수연구실, 저온실, 동물사육실, 방사선동위원소실</li><br>
+              <li>5층 : 약리학실험실, 약리학교실, 실험실, 교수연구실, 세미나실, 강의실, X-선 현미경연구센터, 나노방사선의료영상연구센터</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map82" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_82.jpg" alt="원광대학교병원" /></p>
+          <h3>원광대학교병원</h3>
+          <div class="telInfo"><a href="tel:1577-3773"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">원광대학교병원 : 1577-3773</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>개원연도 : 1981년</li><br>
+              <li>내과계열 : 가정의학과, 소화기내과, 호흡기내과, 내분비대사내과, 신장내과,혈액종양내과, 류마티스내과, 감염내과, 순환기내과, 소아심장과, 소아청소년과, 신경과, 정신건강의학과, 피부과, 통증치료과, 재활의학과, 뇌혈관신경과, 심뇌재활의학과</li><br>
+              <li>외과계열 : 간담췌간이식외과, 위장관대장항문외과, 유방갑상선외과, 이식혈관외과, 흉부외과, 정형외과, 신경외과, 성형외과, 산부인과, 안과, 이비인후과, 비뇨기과, 뇌혈관신경외과, 응급의학과, 외상외과</li><br>
+              <li>지원계열 : 진단검사의학과, 병리과, 직업환경의학과, 방사선종양학과, 핵의학과, 마취통증의학과, 영상의학과, 임상약리학과</li><br>
+              <li>전문센터 : 권역심뇌혈관질환센터, 종합건강증진센터, 척추센터, 암센터,신생아집중치료 지역센터, 국제진료협력센터, 응급의료센터, 소화기센터, 임상시험센터, 외상전문진료센터</li><br>
+              <li>병원규모 : 795병상 | 지상 9층, 지하 1층</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map56" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_56.jpg" alt="인문대학" /></p>
+          <h3>인문대학</h3>
+          <div class="telInfo"><a href="tel:063-850-6142"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6142~3</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6148"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">국어국문학과 : 063-850-6148</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6153"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">영어영문학과 : 063-850-6153</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6169"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">사학과 : 063-850-6169</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6217"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">고고미술사학과 : 063-850-6217</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6041"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">문예창작학과 : 063-850-6041</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5682"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">중국학과 : 063-850-5682</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6175"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">철학과 : 063-850-6175</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6601"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">음악과 : 063-850-6601</h5></a></div>
+
+          <div class="info">
+            <ul>
+              <li>1층 : 인문학연구소, 열림정신연구소, 소극장, 강의실, 교수연구실, 학생회실, 동아리방</li><br>
+              <li>2층 : 학장실, 교학3과, 시청각실, 공동전산실, 학부 및 전공사무실(영어영문, 국어국문), 교수연구실, 강의실, 실습실, 세미나실</li><br>
+              <li>3층 : 학부 및 전공사무실(유럽문화, 인문, 중어중문, 사학, 고미사, 철학)시청각실, 독서실, 교수연구실, 강의실, 기초학문연구실, 학생회실</li><br>
+              <li>4층 : 학부 및 전공사무실(독어독문, 한국어문, 문예창작)학회실, 강의실, 교수연구실</li><br>
+              <li>5층 : 공연영상실습실, 문화콘텐츠연구센터, LAB실, 고시실, 연구실, 글쓰기센터, 강의실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map59-3" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_59_3.jpg" alt="자동차실습관" /></p>
+          <h3>자동차실습관</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map63" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_63.jpg" alt="자연과학대학" /></p>
+          <h3>자연과학대학</h3>
+          <div class="telInfo"><a href="tel:063-850-6863"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6863</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6862"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">과학영재교육원 : 063-850-6862</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6081"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">응용수학부 : 063-850-6081</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6081"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">빅데이터금융통계학부 : 063-850-6081</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6221"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">바이오나노화학부 : 063-850-6221</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6091"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">반도체디스플레이학부 : 063-850-6091</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6086"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">생명과학부 : 063-850-6086</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6204"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">스포츠과학부 : 063-850-6204</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6660"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">뷰티디자인학부 : 063-850-6660</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5653"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">과학관 : 063-850-5653</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>지하 : 공동기기실, 기계실, X-선분석실, 전자현미경실</li><br>
+              <li>1층 : 교학4과, 학장실, 시청각실, 실험실, 자료실, 과학관, 공동기기실</li><br>
+              <li>2층 : 공동기기실, 실험실, 차세대방사선산업기술지역혁신센터, 통계분석실, 실습실, 수학·정보통계학부</li><br>
+              <li>3층 : 실험실, 방사선동위원소실, 반도체·디스플레이학부</li><br>
+              <li>4층 : 생명나노화학부, 실험실, 배양실</li><br>
+              <li>5층 : 줄기세포무균배양실, 실험실, 멀티미디어실, 세미나실, 공동기기실, 생명과학부</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map7" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_7.jpg" alt="자연식물원" /></p>
+          <h3>자연식물원</h3>
+          <h5>운영관리과 : 063-850-5043</h5>
+          <div class="info"></div>
+        </div>
+
+        <div id="map1" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_1.jpg" alt="정문" /></p>
+          <h3>정문</h3>
+          <div class="info"></div>
+        </div>
+
+        <div id="map74-1" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_74_1.jpg" alt="제2치학관" /></p>
+          <h3>제2치학관</h3>
+          <div class="telInfo"><a href="tel:063-850-6863"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6850</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6863"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">치의예과 : 063-850-6850</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6863"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">치의학과 : 063-850-6850</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 중형강의실, PBL실, 교수회의실, 학장실, 교학8과</li><br>
+              <li>2층 : 강의실, 기초학실습실, 현미경실, 독서실, 세미나실, 정보검색실</li><br>
+              <li>3층 : 다목적실습실, 방사선사진실, 강의실, 시뮬레이션실습실, 모형제작실</li><br>
+              <li>4층 : 강의실, 실습실, 교수연구실, 휴게실, 여학생 휴게실, 학생회실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map69-1" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_69_1.jpg" alt="제생의세관" /></p>
+          <h3>제생의세관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 납골당 및 분향실, 안치실, 추모실</li><br>
+              <li>2층 : 조직보관실, 실습실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map62" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_62.jpg" alt="조소관" /></p>
+          <h3>조소관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 조소 및 합성수지실</li><br>
+              <li>2층 : 이미지표현실, 환경조각전공사무실</li><br>
+              <li>3층 : 대학원세미나실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map62-1" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_62_1.jpg" alt="조소관 별관" /></p>
+          <h3>조소관 별관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 가마실, 대학원실, 실기실</li><br>
+              <li>야외 : 금속조실기실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map14-1" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_14_1.jpg" alt="중앙도서관" /></p>
+          <h3>중앙도서관</h3>
+          <div class="telInfo"><a href="tel:063-850-5444"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">운영관리과 : 063-850-5444</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5464"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">주제정보과 : 063-850-5464</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 자유열람실1, 로비, 관장실, 운영관리과</li><br>
+              <li>2층 : 자유열람실2, 복합문화공간</li><br>
+              <li>3층 : 그룹스터디존, 디지털정보센터</li><br>
+              <li>4층 : 인문.예술자료실</li><br>
+              <li>5층 : 부관장실, 사회.과학기술자료실</li><br>
+              <li>6층 : 보존서고1/고문헌자료실</li><br>
+              <li>7층 : 보존서고2</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map18" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_18.jpg" alt="체육관" /></p>
+          <h3>체육관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 스포츠과학부사무실(사회체육학, 스포츠산업학전공), 2급 생활체육연수원, 체육청소년연구소, 생체역학실험실, 시청각실, 경기장, 샤워장, 교수연구실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map74" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_74.jpg" alt="치과대학" /></p>
+          <h3>치과대학</h3>
+          <div class="telInfo"><a href="tel:063-850-6863"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6850</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6863"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">치의예과 : 063-850-6850</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6863"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">치의학과 : 063-850-6850</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 고시실, 대학원 사무실, 졸업준비위원회</li><br>
+              <li>2층 : 동위원소실험실, 예방치학실험실, 구강미생물학실험실, 교수연구실</li><br>
+              <li>3층 : 강의실, 독서실, 구강생화학실험실, 매점, 대학원세미나실, 기초학실습실B(생화학)</li><br>
+              <li>4층 : 강의실, 세미나실(다목적강의실2), 교수연구실</li><br>
+              <li>1층(신관) : 다목적강의실, 공동기기실1(미생물), 치과약리학실험실</li><br>
+              <li>2층(신관) : 구강병리학실험실, 공동기기실2(재료학), 공동기기실3(해부학)</li><br>
+              <li>3층(신관) : 원내생실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map83" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_83.jpg" alt="치과대학 치과병원" /></p>
+          <h3>치과대학 치과병원</h3>
+          <div class="telInfo"><a href="tel:063-859-2929"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">치과병원 : 063-859-2929</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>개원연도 : 1978년</li><br>
+              <li>진료과목 : 치과교정과, 치주과, 소아치과, 치과보철과, 치과보존과, 구강악안면외과, 구강내과, 구강악안면방사선과</li><br>
+              <li>병원규모 : 6병상 | 지상 4층, 지하 1층</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map55" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_55.jpg" alt="학군단" /></p>
+          <h3>학군단</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 체력단련실, 행정실, 생활관, 도서실, 열람실, 교보재실, 4학년 병영생활지도실</li><br>
+              <li>2층 : 단장실, 역사관, 전산실, 선임교관실, 회의실, 강의실, 3학년 병영생활지도실</li><br>
+              <li>3층 : 강의실, 교수연구실, 탈의실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map31" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_31.jpg" alt="학생생활관-개벽관" /></p>
+          <h3>학생생활관-개벽관</h3>
+          <div class="telInfo"><a href="tel:063-840-4002"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">운영관리과 : 063-840-4002~3</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 식당, 영양사실</li><br>
+              <li>2층 : 사감실, 조교실, 침실, 샤워장, 탈의실</li><br>
+              <li>3층 : 휴게실, 샤워장, 탈의실, 침실</li><br>
+              <li>4층 : 도서실, 샤워실, 탈의실, 침실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map35" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_35.jpg" alt="학생생활관-보은관" /></p>
+          <h3>학생생활관-보은관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 사감실, 외국인교수실, 식당, 주방</li><br>
+              <li>2층~13층 : 휴게실, 침실, 샤워실, 세면실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map34" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_34.jpg" alt="학생생활관-사은관" /></p>
+          <h3>학생생활관-사은관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 사감실, 상담실, 외국인교수숙소, 샤워장, 조교실, 회의실</li><br>
+              <li>2층 : 독서실, 샤워장, 세면실, 침실</li><br>
+              <li>3층 : 휴게실, 샤워장, 세면실, 침실</li><br>
+              <li>4층 : 명상실, 샤워장, 세면실, 침실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map33" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_33.jpg" alt="학생생활관-삼동관" /></p>
+          <h3>학생생활관-삼동관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 장애인숙소, 외국인숙소, 관리실, 화장실, 탈의실, 침실</li><br>
+              <li>2층 : 상담실, 세면장, 샤워실, 침실(20개)</li><br>
+              <li>3층 : 독서실, 세면장, 샤워실, 침실(20개)</li><br>
+              <li>4층 : 휴게실, 세면장, 샤워실, 침실(20개)</li><br>
+              <li>5층 : 세면장, 샤워실, 침실(22개)</li><br>
+              <li>6층 : 독서실, 세면장, 샤워실, 침실(20개)</li><br>
+              <li>7층 : 휴게실, 세면장, 샤워실, 침실(20개)</li><br>
+              <li>8층 : 세면장, 샤워실, 침실(22개)</li><br>
+              <li>9층 : 독서실, 세면장, 샤워실, 침실(20개)</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map36" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_36.jpg" alt="학생생활관-어학관" /></p>
+          <h3>학생생활관-어학관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 어학실습실, 멀티미디어실, 영상/음향Lab, OA실습실, 토론실</li><br>
+              <li>2층 : 외국인기숙사, 사감실</li><br>
+              <li>3층 : 휴게실, 여자기숙실</li><br>
+              <li>4층 : 휴게실, 여자기숙실</li><br>
+              <li>5층 : 휴게실, 여자기숙실</li><br>
+              <li>6층 : 휴게실, 여자기숙실</li><br>
+              <li>7층 : 휴게실, 여자기숙실</li><br>
+              <li>8층 : 휴게실, 여자기숙실</li><br>
+              <li>9층 : 휴게실, 여자기숙실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map30" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_30.jpg" alt="학생생활관-용화관" /></p>
+          <h3>학생생활관-용화관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 식당, 다목적실, 운동부감독 및 코치숙소</li><br>
+              <li>2층 : 휴게실, 세면장, 샤워실, 침실(20개)</li><br>
+              <li>3층 : 독서실, 세면장, 샤워실, 침실(20개)</li><br>
+              <li>4층 : 세면장, 샤워실, 침실(22개)</li><br>
+              <li>5층 : 휴게실, 세면장, 샤워실, 침실(20개)</li><br>
+              <li>6층 : 독서실, 세면장, 샤워실, 침실(20개)</li><br>
+              <li>7층 : 세면장, 샤워실, 침실(22개)</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map37" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_37.jpg" alt="학생생활관-청운관" /></p>
+          <h3>학생생활관-청운관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 상담실, 부사감실, 관장실, 통신실, 샤워장, 세면장, 침실</li><br>
+              <li>2층 : 샤워장, 세면장, 침실</li><br>
+              <li>3층 : 샤워장, 세면장, 침실</li><br>
+              <li>4층 : 샤워장, 세면장, 침실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map32" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_32.jpg" alt="학생생활관-학림관" /></p>
+          <h3>학생생활관-학림관</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 사감실, 상담실, 침실, 세면장, 샤워장</li><br>
+              <li>2층 : 휴게실, 샤워장, 세면장, 침실</li><br>
+              <li>3층 : 휴게실, 샤워장, 세면장, 침실</li><br>
+              <li>4층~15층 : 샤워장, 세면장, 침실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map14" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_14.jpg" alt="학생지원관(교양교육대학)" /></p>
+          <h3>학생지원관(교양교육대학)</h3>
+          <div class="telInfo"><a href="tel:063-850-5147"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">학사지원과 : 063-850-5147</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5027"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교수학습개발과 : 063-850-5027</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5566"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">학생상담센터 : 063-850-5566</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5756"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교육혁신인증원 : 063-850-5756~7</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5402"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">여대생커리어개발센터 : 063-850-5402</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5781"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">대학일자리센터 : 63-850-5781~2</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5319"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">취업지원과 : 063-850-5319</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5472"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">기록물관리과 : 063-850-5472</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5752"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">국제교류과 : 063-850-5752(82-63-850-5752)</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-7213"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">공자학원 : 063-850-7213(82-63-850-7213)</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5386"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">LINC+사업단 : 063-850-5386~7</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-7068"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">특성화사업단 : 063-850-7068~9</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5455"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">학술정보과 : 063-850-5455</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5148"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">사회봉사과 : 063-850-5148</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5562"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">출판국 : 063-850-5562</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>지하 : 취업전용강의실1~4, 창업.취업스터디룸1~14, 보존서고</li><br>
+              <li>1층 : 학사지원과, 교양교육대학, 교직양성과, 취업지원과, 여대생커리어개발센터, 편의점</li><br>
+              <li>2층 : 국제교류과, 사회봉사과, 대학원, 학생상담센터, 공자학원</li><br>
+              <li>3층 : LINC사업단(현장실습지원센터/기업종합지원센터/창업교육센터/창조경제사업화센터/공동기기센터), CK-l특성화사업단, CQI사업준비단, 자유열람실3A/3B, 정독실1~3, 스터디룸1~3, 도서관자치운영위원회</li><br>
+              <li>4층 : 봉황인재학부 사무실, 공무원 영상학습실, 의학도서보존서고, 법학전문도서관 보존서고, 자유열람실</li><br>
+              <li>5층 : 학술정보과, 학위논문실, 서고</li><br>
+              <li>6층 : 교수학습개발센터, 한중관계연구원, 한중법률연구소,한중역사문화연구소, 한중정치외교연구소, 한중통상산업연구소, 교수학습세미나실, 첨단스튜디오실, 기록물관리과</li><br>
+              <li>7층 : 신문자료실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map24" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_24.jpg" alt="학생회관" /></p>
+          <h3>학생회관</h3>
+          <div class="telInfo"><a href="tel:063-850-5235"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">학생과 : 063-850-5235</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5238"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">건강공제회 : 063-850-5238</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5242"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">장학복지과 : 063-850-5242</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5223"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">장애학생지원센터 : 063-850-5223</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5562"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">운영관리과 : 063-850-5562</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5552"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">원대신문 : 063-850-5552</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-5561"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">원대방송 : 063-850-5561</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>지하 : 학생식당</li><br>
+              <li>1층 : 서점, 복지매장, 우체국, 새마을금고, 하나은행, 소극장, 대강당</li><br>
+              <li>2층 : 학생과, 장학복지과, 특수대학원 교학과(교육/경영/행정/동양학/보건·보완의학/식품산업기술대학원), 신문방송사, 건강공제회</li><br>
+              <li>3층 : 총학생회, 동아리연합회, 학생자치기구</li><br>
+              <li>4층 : 동아리방</li><br>
+              <li>5층 : 동아리방</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map71" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_71.jpg" alt="한의과대학" /></p>
+          <h3>한의과대학</h3>
+          <div class="telInfo"><a href="tel:063-850-6833"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">교학과 : 063-850-6833</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6833"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">한의예과 : 063-850-6833</h5></a></div>
+          <div class="telInfo"><a href="tel:063-850-6833"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">한의학과 : 063-850-6833</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 멀티미디어실, 세미나실, 학장실, 교학7과, 교수연구실, 강당</li><br>
+              <li>2층 : 공동기기실, 한방진단경혈학실습실, 실험실, 열람실, 독서실, 교수연구실, 한국전통의학연구소, 세미나실, 방제학교실, 경혈학교실, 진단학교실, 원전학교실, 의사학교실</li><br>
+              <li>3층 : 본초학교실, 병리학교실, 실습실, 교수연구실</li><br>
+              <li>4층 : 약리학교실, 생리·조직실습실, 생리학교실, 분석기기실, 교수연구실, 동아리방</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map81" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_81.jpg" alt="한의과대학 익산한방병원" /></p>
+          <h3>한의과대학 익산한방병원</h3>
+          <div class="telInfo"><a href="tel:063-859-1114"><img class="telIcon" src="./resource/tel_icon.png"/><h5 class="telText">익산한방병원 : 063-859-1114</h5></a></div>
+          <div class="info">
+            <ul>
+              <li>1층 : 경영경제연구소,교수연구실</li><br>
+              <li>2층 : 교수연구실,특수신분교수실,국제공인IT자격시험센터</li><br>
+              <li>3층 : 대학원세미나실,교수연구실</li><br>
+              <li>4층 : 영상학습실,동아리방,강의실</li><br>
+            </ul>
+          </div>
+        </div>
+
+        <div id="map70" class="mapInfo">
+          <p class="figure"><img src="./resource/img_campus_map_70.jpg" alt="한의학전문대학원" /></p>
+          <h3>한의학전문대학원</h3>
+          <div class="info">
+            <ul>
+              <li>1층 : 컴퓨터실, 학생회실, 강의실</li><br>
+              <li>2층 : 교학과, 고시실, 세미나실</li><br>
+              <li>3층 : 세미나실, 한의정보학과사무실, 어학실습실, 컴퓨터실</li><br>
+              <li>4층 : 실험실, 멀티미디어실, 세미나실</li><br>
+              <li>5층 : 세미나실, 공동기기실, 방사선동위원소실, 실험실</li><br>
+              <li>6층 : 뇌질환한방연구센터, 공동실험실</li><br>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    <script type='text/javascript'>
+      /* <![CDATA[ */
+      var oCalendarFrontData = {"selfUrl":"\/about\/campus-info\/campus-map.html","year":"2018","month":"1","cat_slug":null,"search_calendar_keyword":null,"searchCalendarInputName":"search_calendar_keyword"};
+      /* ]]> */
+    </script>
+
+    <script type='text/javascript' src='http://www.wku.ac.kr/wp-content/themes/wku/common/js/calendar.js?ver=1.0'></script>
+    <script type='text/javascript' src='http://www.wku.ac.kr/wp-content/themes/wku/common/js/jquery.bxslider.min.js?ver=4.1.2'></script>
+    <script type='text/javascript' src='http://www.wku.ac.kr/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+    <script type='text/javascript' src='http://www.wku.ac.kr/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+    <script type='text/javascript' src='http://www.wku.ac.kr/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
+    <script type='text/javascript' src='http://www.wku.ac.kr/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
+    <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&ver=3'></script>
+    <script type='text/javascript' src='http://www.wku.ac.kr/wp-content/themes/wku/common/js/youtube.js?ver=1.0'></script>
+    <script type='text/javascript' src='./ui.js'></script>
+    <script type='text/javascript' src='http://www.wku.ac.kr/wp-includes/js/wp-embed.min.js?ver=4.9.1'></script>
+    <script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+
+    <script type="text/javascript">
+        if(!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "b5b6f918eda4e4";
+        wcs_do();
+    </script>
+</body>
+</html>

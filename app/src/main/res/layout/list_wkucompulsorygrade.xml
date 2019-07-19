@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5">
+
+        <TextView
+            android:id="@+id/graduation_compulsory_grade_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="졸업시 필수 이수학점 "
+            android:textSize="7pt"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/graduation_compulsory_grade_explain"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="top|center_horizontal"
+            android:text="졸업시 꼭 이수 해야하는 전체 학점"
+            android:textSize="5pt"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/graduation_compulsory_grade_curGrade"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="136"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="/"/>
+
+    <TextView
+        android:id="@+id/graduation_compulsory_grade_aimGrade"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="136"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="학점"
+        android:textSize="6pt"/>
+</LinearLayout>
